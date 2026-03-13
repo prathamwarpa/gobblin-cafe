@@ -91,7 +91,7 @@ export function HowToFindUs() {
 
       {/* Journey Carousel — same 3D effect as Gallery */}
       <FadeUp delay={100}>
-        <div style={{ paddingBottom: "clamp(40px, 6vw, 60px)", position: "relative", zIndex: 2 }}>
+        <div style={{ paddingBottom: "clamp(96px, 20vw, 160px)", position: "relative", zIndex: 2 }}>
           <Carousel slides={journeySlides} />
         </div>
       </FadeUp>
@@ -101,6 +101,7 @@ export function HowToFindUs() {
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
+          marginTop: "clamp(16px, 6vw, 36px)",
           padding: "0 clamp(20px, 5vw, 48px)",
           position: "relative",
           zIndex: 2,

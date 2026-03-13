@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { MenuVertical } from "@/components/menu-vertical"
 
 const navLinks = [
   { label: "The Story", href: "#story" },
@@ -34,6 +35,7 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
   return (
     <>
       <nav
+        className="gob-nav-shell"
         style={{
           position: "fixed",
           top: 0,
@@ -51,6 +53,7 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
         }}
       >
         <a
+          className="gob-nav-brand"
           href="#"
           onClick={(e) => {
             e.preventDefault()
@@ -68,7 +71,7 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
           Gobblin
         </a>
 
-        <div style={{ display: "flex", gap: "32px", alignItems: "center" }} className="hidden md:flex">
+        <div style={{ gap: "32px", alignItems: "center" }} className="hidden md:flex">
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -94,7 +97,7 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
         </div>
 
         <button
-          className="flex md:hidden"
+          className="gob-nav-toggle flex md:hidden flex-col items-center justify-center gap-[5px]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           style={{
@@ -103,11 +106,6 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
             padding: "10px",
             minWidth: "44px",
             minHeight: "44px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "5px",
-            alignItems: "center",
-            justifyContent: "center",
           }}
         >
           <span style={{ display: "block", width: "22px", height: "1.5px", background: "var(--text-warm)", transition: "transform 0.3s ease, opacity 0.3s ease", transform: open ? "rotate(45deg) translateY(6.5px)" : "none" }} />
@@ -143,38 +141,50 @@ export function Nav({ onOpenMenu }: { onOpenMenu: () => void }) {
           transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
           display: "flex",
           flexDirection: "column",
-          padding: "80px 32px 40px",
-          gap: "8px",
+          padding: "80px 22px 40px",
+          gap: "10px",
         }}
       >
         <p style={{ fontSize: "9px", letterSpacing: "3px", textTransform: "uppercase", color: "var(--text-dim)", marginBottom: "24px", fontFamily: "var(--font-sans)" }}>
           Navigate
         </p>
-        {navLinks.map((link) => (
-          <button
-            key={link.href}
-            onClick={() => handleNavClick(link.href)}
-            style={{
-              textAlign: "left",
-              background: "none",
-              border: "none",
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(1.4rem, 4vw, 1.8rem)",
-              fontWeight: 600,
-              color: "var(--text-warm)",
-              padding: "10px 0",
-              minHeight: "52px",
-              borderBottom: "1px solid var(--gb-border)",
-              transition: "color 0.2s ease",
-            }}
-          >
-            {link.label}
-          </button>
-        ))}
+        <MenuVertical
+          menuItems={navLinks}
+          color="var(--text-gold)"
+          skew={2}
+          className="px-0"
+          onItemClick={handleNavClick}
+        />
         <p style={{ marginTop: "auto", fontSize: "11px", color: "var(--text-dim)", fontFamily: "var(--font-sans)", letterSpacing: "1px" }}>
           Every day · 10am – 12:30am
         </p>
       </div>
+
+      <style>{`
+        @media (max-width: 767px) {
+          .gob-nav-shell {
+            left: auto !important;
+            right: 12px !important;
+            top: 12px !important;
+            width: auto !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border-bottom: none !important;
+            backdrop-filter: none !important;
+          }
+
+          .gob-nav-brand {
+            display: none;
+          }
+
+          .gob-nav-toggle {
+            border: 1px solid var(--gb-border);
+            border-radius: 999px;
+            background: rgba(26, 15, 0, 0.9) !important;
+            backdrop-filter: blur(8px);
+          }
+        }
+      `}</style>
     </>
   )
 }

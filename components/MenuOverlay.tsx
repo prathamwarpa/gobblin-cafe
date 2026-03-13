@@ -146,28 +146,35 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
         position: "fixed",
         inset: 0,
         zIndex: 60,
-        background: "#110a00",
+        background: open ? "rgba(17, 10, 0, 0.96)" : "rgba(17, 10, 0, 0)",
         overflowY: "auto",
         opacity: open ? 1 : 0,
         pointerEvents: open ? "auto" : "none",
-        transform: open ? "translateY(0)" : "translateY(-14px)",
-        transition: "opacity 0.35s ease, transform 0.35s ease",
+        transition: "opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.55s cubic-bezier(0.22, 1, 0.36, 1)",
+        willChange: "opacity, background-color",
       }}
     >
       <div
         style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 2,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "18px 24px",
-          background: "rgba(17, 10, 0, 0.92)",
-          backdropFilter: "blur(8px)",
-          borderBottom: "1px solid var(--gb-border)",
+          opacity: open ? 1 : 0,
+          transform: open ? "translateY(0)" : "translateY(16px)",
+          transition: "opacity 0.5s ease, transform 0.5s ease",
         }}
       >
+        <div
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            padding: "18px 24px",
+            background: "rgba(17, 10, 0, 0.92)",
+            backdropFilter: "blur(8px)",
+            borderBottom: "1px solid var(--gb-border)",
+          }}
+        >
         <span
           style={{
             fontFamily: "var(--font-serif)",
@@ -197,53 +204,53 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
         >
           Close
         </button>
-      </div>
-
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "28px 20px 84px" }}>
-        <div style={{ textAlign: "center", marginBottom: "26px" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(1.8rem, 4vw, 3rem)",
-              fontStyle: "italic",
-              color: "var(--text-warm)",
-              lineHeight: 1.15,
-              fontWeight: 400,
-            }}
-          >
-            The Menu
-          </h2>
         </div>
 
-        <div className="menu-modal-chips">
+        <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "28px 20px 84px" }}>
+          <div style={{ textAlign: "center", marginBottom: "26px" }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(1.8rem, 4vw, 3rem)",
+                fontStyle: "italic",
+                color: "var(--text-warm)",
+                lineHeight: 1.15,
+                fontWeight: 400,
+              }}
+            >
+              The Menu
+            </h2>
+          </div>
+
+          <div className="menu-modal-chips">
+            {menuCategories.map((category) => (
+              <a key={category.id} href={`#overlay-menu-${category.id}`} className="menu-modal-chip">
+                {category.label}
+              </a>
+            ))}
+          </div>
+
           {menuCategories.map((category) => (
-            <a key={category.id} href={`#overlay-menu-${category.id}`} className="menu-modal-chip">
-              {category.label}
-            </a>
+            <div id={`overlay-menu-${category.id}`} key={category.id} className="overlay-menu-category">
+              <h3 className="overlay-menu-title">{category.label}</h3>
+              <Carousel
+                items={category.items.map((item, index) => (
+                  <TestimonialCard
+                    key={`${category.id}-${item.name}`}
+                    index={index}
+                    layout
+                    testimonial={{
+                      name: item.name,
+                      designation: `Price · ${item.price}`,
+                      description: item.description,
+                      profileImage: item.image,
+                    }}
+                  />
+                ))}
+              />
+            </div>
           ))}
         </div>
-
-        {menuCategories.map((category) => (
-          <div id={`overlay-menu-${category.id}`} key={category.id} className="overlay-menu-category">
-            <h3 className="overlay-menu-title">{category.label}</h3>
-            <Carousel
-              items={category.items.map((item, index) => (
-                <TestimonialCard
-                  key={`${category.id}-${item.name}`}
-                  index={index}
-                  layout
-                  onCardClose={() => {}}
-                  testimonial={{
-                    name: item.name,
-                    designation: `Price · ${item.price}`,
-                    description: item.description,
-                    profileImage: item.image,
-                  }}
-                />
-              ))}
-            />
-          </div>
-        ))}
       </div>
 
       <style>{`

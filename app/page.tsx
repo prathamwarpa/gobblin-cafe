@@ -12,6 +12,7 @@ import { Footer } from "@/components/Footer"
 import { ScrollProgress } from "@/components/ScrollProgress"
 import { SectionDivider } from "@/components/SectionDivider"
 import { MenuOverlay } from "@/components/MenuOverlay"
+import { ParticleButton } from "@/components/ui/particle-button"
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -34,8 +35,9 @@ export default function Page() {
             background: "#110a00",
           }}
         >
-          <button
-            onClick={() => setMenuOpen(true)}
+          <ParticleButton
+            onSuccess={() => setMenuOpen(true)}
+            successDuration={850}
             style={{
               border: "1px solid var(--gb-border)",
               background: "var(--bg-card)",
@@ -58,7 +60,7 @@ export default function Page() {
             }}
           >
             Open Menu
-          </button>
+          </ParticleButton>
         </section>
         <SectionDivider />
         <HowToFindUs />
