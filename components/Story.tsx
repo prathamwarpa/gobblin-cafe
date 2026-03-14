@@ -130,7 +130,7 @@ export function Story() {
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&q=80"
+              src="https://media.gettyimages.com/id/1354072082/photo/forest.jpg?s=612x612&w=0&k=20&c=rkoIKJg0h3nWef9ZeZgT5UQ_28lICnMxFJnSqWZxRXM="
               alt="Misty deodar forest — the path to Gobblin"
               loading="lazy"
               style={{

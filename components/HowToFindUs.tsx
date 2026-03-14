@@ -7,22 +7,22 @@ const journeySlides = [
   {
     title: "01 — Enter Old Manali",
     button: "Cross the bridge",
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=85",
+    src: "https://media.istockphoto.com/id/1128928374/photo/old-temple-in-himalayas-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=jdewqyiKyZc1zMJ11lbieQQuUlO97czP_ddFwtjCnoU=",
   },
   {
     title: "02 — Follow the River",
     button: "Hear the Beas",
-    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=900&q=85",
+    src: "https://manalitourism.co.in/images/places-to-visit/headers/beas-river-manali-header-manali-tourism.jpg.jpg",
   },
   {
     title: "03 — Find the Goblin Sign",
     button: "Look for the carving",
-    src: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&q=85",
+    src: "https://media.gettyimages.com/id/527114332/photo/this-is-a-small-format-stone-lithograph-poster-advertising-a-soap-from-circa-1908.jpg?s=612x612&w=0&k=20&c=V6L_oR6aN4-L8gCKsiuqq_V-q77BwDNk6sOoTT9nuNU=",
   },
   {
     title: "04 — Walk into the Forest",
     button: "Follow the music",
-    src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=900&q=85",
+    src: "https://media.gettyimages.com/id/152221201/photo/a-trail-leading-through-kauai-farmland.jpg?s=612x612&w=0&k=20&c=hAG6AwdRwZPT_MkIfs6q-kO64keGL51UdjiYfQMBBV8=",
   },
 ]
 

@@ -40,7 +40,7 @@ const imageGroups: { title: string; url: string }[][] = [
   ],
   [
     { title: "After Midnight", url: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=600&h=1000&fit=crop" },
-    { title: "The River Below", url: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=600&h=1000&fit=crop" },
+    { title: "The River Below", url: "https://images.pexels.com/photos/223022/pexels-photo-223022.jpeg" },
     { title: "Into the Clearing", url: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&h=1000&fit=crop" },
   ],
 ]

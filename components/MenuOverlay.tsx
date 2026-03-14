@@ -24,21 +24,21 @@ const menuCategories: MenuCategory[] = [
     items: [
       {
         name: "Margherita Classica",
-        description: "San marzano tomato, fior di latte mozzarella, basil and extra virgin olive oil.",
+        description: "The purist's pizza — bright San Marzano tomato, hand-torn fior di latte, fresh basil and cold-pressed olive oil. Simple. Perfect. 10-inch, 4 slices · 620 kcal · 22g protein.",
         price: "₹ 420",
-        image: "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=700&q=80",
+        image: "https://images.pexels.com/photos/35819051/pexels-photo-35819051.jpeg",
       },
       {
         name: "Smoked Chicken Pepper",
-        description: "House-smoked chicken, roasted peppers, caramelized onion and mozzarella.",
+        description: "Chicken slow-smoked in-house, layered with fire-roasted peppers, sweet caramelized onion and a generous pull of mozzarella. Bold and satisfying. 10-inch, 4 slices · 780 kcal · 38g protein.",
         price: "₹ 540",
-        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700&q=80",
+        image: "https://images.pexels.com/photos/33458051/pexels-photo-33458051.jpeg",
       },
       {
         name: "Truffle Mushroom",
-        description: "Wild mushrooms, truffle cream, arugula and aged parmesan.",
+        description: "Earthy wild mushrooms folded into silky truffle cream, crowned with peppery arugula and shavings of aged parmesan. Deeply aromatic. 10-inch, 4 slices · 690 kcal · 19g protein.",
         price: "₹ 560",
-        image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=700&q=80",
+        image: "https://images.pexels.com/photos/1878344/pexels-photo-1878344.jpeg",
       },
     ],
   },
@@ -48,21 +48,21 @@ const menuCategories: MenuCategory[] = [
     items: [
       {
         name: "Arrabbiata Rigatoni",
-        description: "Rigatoni tossed in spicy tomato sauce with garlic, basil and parmesan.",
+        description: "Thick rigatoni catching every drop of our slow-cooked spicy tomato sauce, rounded with garlic, torn basil and a cloud of parmesan. 300g · 540 kcal · 17g protein.",
         price: "₹ 390",
-        image: "https://images.unsplash.com/photo-1608756687911-aa1599ab0386?w=700&q=80",
+        image: "https://images.pexels.com/photos/14930758/pexels-photo-14930758.jpeg",
       },
       {
         name: "Alfredo Fettuccine",
-        description: "Creamy parmesan alfredo, fettuccine ribbons and cracked black pepper.",
+        description: "Long ribbons of fettuccine draped in a velvety parmesan cream sauce, finished with cracked black pepper. Rich, classic, unapologetic. 300g · 680 kcal · 21g protein.",
         price: "₹ 440",
-        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=700&q=80",
+        image: "https://images.pexels.com/photos/5639532/pexels-photo-5639532.jpeg",
       },
       {
         name: "Pesto Penne",
-        description: "Basil pesto, toasted pine nuts, cherry tomato and pecorino.",
+        description: "Vibrant basil pesto clinging to every ridge of the penne, lifted by bursts of cherry tomato, pine nuts and aged pecorino. 300g · 580 kcal · 18g protein.",
         price: "₹ 410",
-        image: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=700&q=80",
+        image: "https://images.pexels.com/photos/29042346/pexels-photo-29042346.jpeg",
       },
     ],
   },
@@ -72,19 +72,19 @@ const menuCategories: MenuCategory[] = [
     items: [
       {
         name: "Herb Grilled Chicken",
-        description: "Herb-marinated chicken breast, garlic mash and buttered seasonal vegetables.",
+        description: "Chicken steeped overnight in rosemary, thyme and garlic, grilled over open flame. Served with velvety garlic mash and seasonal vegetables in brown butter. 250g + sides · 520 kcal · 46g protein.",
         price: "₹ 590",
         image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=700&q=80",
       },
       {
         name: "Pan-Seared Fish",
-        description: "Lemon butter fish fillet, sauteed greens and roasted potatoes.",
+        description: "Golden-crusted fish fillet kissed with lemon butter, plated over sautéed greens and crispy roasted potatoes. Light, fresh and quietly elegant. 200g + sides · 460 kcal · 39g protein.",
         price: "₹ 640",
         image: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=700&q=80",
       },
       {
         name: "Steak and Jus",
-        description: "Char-grilled steak, pepper jus, confit garlic and grilled asparagus.",
+        description: "Char-grilled to order, finished with a deep peppercorn jus, confit garlic and grilled asparagus spears. The kind of dish you remember. 220g + sides · 710 kcal · 52g protein.",
         price: "₹ 760",
         image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=700&q=80",
       },
@@ -96,19 +96,19 @@ const menuCategories: MenuCategory[] = [
     items: [
       {
         name: "Berry Fizz",
-        description: "Mixed berry puree, lime, mint and sparkling water.",
+        description: "Mixed berry puree with fresh lime, bruised mint and chilled sparkling water. Bright, tart and impossibly refreshing. 350ml · 95 kcal · 0g protein.",
         price: "₹ 220",
-        image: "https://images.unsplash.com/photo-1551024709-8f23befc6cf7?w=700&q=80",
+        image: "https://images.pexels.com/photos/5947012/pexels-photo-5947012.jpeg",
       },
       {
         name: "Citrus Cooler",
-        description: "Orange, lemon, basil and tonic over ice.",
+        description: "Fresh-squeezed orange and lemon with basil, poured over ice and topped with tonic for a gentle bitter finish. Clean and instantly uplifting. 350ml · 85 kcal · 0g protein.",
         price: "₹ 240",
         image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=700&q=80",
       },
       {
         name: "Cold Coffee",
-        description: "Slow-brewed coffee, vanilla, milk foam and dark chocolate dust.",
+        description: "Slow-brewed single-origin coffee chilled overnight, blended with vanilla and whole milk, crowned with foam and dark chocolate dust. A proper cold coffee. 350ml · 180 kcal · 6g protein.",
         price: "₹ 260",
         image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=700&q=80",
       },

@@ -17,6 +17,8 @@ const events = [
     pulseShadowStart: "rgba(212,169,106,0.5)",
     pulseShadowEnd: "rgba(212,169,106,0)",
     eventNumber: "01",
+    imageLabel: "Live music night under pine trees",
+    imageVariant: "events-image-music",
   },
   {
     tag: "Full Moon",
@@ -30,6 +32,8 @@ const events = [
     pulseShadowStart: "rgba(192,112,160,0.5)",
     pulseShadowEnd: "rgba(192,112,160,0)",
     eventNumber: "02",
+    imageLabel: "Full moon night in the forest",
+    imageVariant: "events-image-moon",
   },
 ]
 
@@ -126,6 +130,14 @@ export function Events() {
                   </div>
 
                   <div>
+                    <div
+                      className={`events-image ${event.imageVariant}`}
+                      role="img"
+                      aria-label={event.imageLabel}
+                    >
+                      <span className="events-image-haze" aria-hidden="true" />
+                    </div>
+
                     <h3 className="events-card-title">{event.name}</h3>
                     <p className="events-card-description">{event.description}</p>
                     <p className="events-card-detail">{event.detail}</p>
@@ -355,6 +367,71 @@ export function Events() {
           line-height: 1.3;
         }
 
+        .events-image {
+          position: relative;
+          height: 148px;
+          border-radius: 10px;
+          border: 0.5px solid rgba(212, 169, 106, 0.24);
+          overflow: hidden;
+          margin-bottom: 18px;
+          background-size: cover;
+          background-position: center;
+          transition: transform 0.45s ease, border-color 0.35s ease;
+        }
+
+        .events-image::before,
+        .events-image::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        .events-image::before {
+          background: linear-gradient(180deg, rgba(26, 15, 0, 0.05) 0%, rgba(26, 15, 0, 0.68) 100%);
+          z-index: 1;
+        }
+
+        .events-image::after {
+          background:
+            radial-gradient(circle at 20% 35%, rgba(240, 208, 144, 0.25) 0 2px, transparent 3px),
+            radial-gradient(circle at 52% 24%, rgba(240, 208, 144, 0.2) 0 2px, transparent 3px),
+            radial-gradient(circle at 79% 30%, rgba(240, 208, 144, 0.22) 0 2px, transparent 3px);
+          opacity: 0.75;
+          animation: events-stars-pulse 5.5s ease-in-out infinite;
+          z-index: 2;
+        }
+
+        .events-image-haze {
+          position: absolute;
+          left: -6%;
+          right: -6%;
+          bottom: -20%;
+          height: 58%;
+          background: radial-gradient(75% 75% at 50% 100%, rgba(245, 230, 200, 0.3) 0%, rgba(245, 230, 200, 0) 75%);
+          z-index: 2;
+          animation: events-image-haze 8s ease-in-out infinite;
+        }
+
+        .events-image-music {
+          background-image:
+            linear-gradient(140deg, rgba(16, 10, 0, 0.24) 0%, rgba(16, 10, 0, 0.52) 58%, rgba(16, 10, 0, 0.76) 100%),
+            url("https://images.pexels.com/photos/1179581/pexels-photo-1179581.jpeg");
+          background-position: center, center 58%;
+        }
+
+        .events-image-moon {
+          background-image:
+            linear-gradient(145deg, rgba(24, 14, 32, 0.34) 0%, rgba(20, 11, 0, 0.58) 58%, rgba(20, 11, 0, 0.8) 100%),
+            url("https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg");
+          background-position: center, center 42%;
+        }
+
+        .events-card:hover .events-image {
+          transform: scale(1.035);
+          border-color: rgba(212, 169, 106, 0.44);
+        }
+
         .events-card-description {
           font-size: 0.9rem;
           line-height: 1.7;
@@ -474,6 +551,28 @@ export function Events() {
           }
           100% {
             left: 125%;
+          }
+        }
+
+        @keyframes events-image-haze {
+          0%,
+          100% {
+            transform: translateX(0);
+            opacity: 0.5;
+          }
+          50% {
+            transform: translateX(3%);
+            opacity: 0.75;
+          }
+        }
+
+        @keyframes events-stars-pulse {
+          0%,
+          100% {
+            opacity: 0.45;
+          }
+          50% {
+            opacity: 0.9;
           }
         }
       `}</style>

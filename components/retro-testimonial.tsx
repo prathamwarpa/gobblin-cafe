@@ -226,18 +226,18 @@ const ProfileImage = ({src, alt, ...rest}: ImageProps) => {
 	const [isLoading, setLoading] = useState(true);
 
 	return (
-		<div className="w-[90px] h-[90px] md:w-[150px] md:h-[150px] opacity-80 overflow-hidden rounded-[1000px] border-[3px] border-solid border-[rgba(59,59,59,0.6)] aspect-[1/1] flex-none saturate-[0.2] sepia-[0.46] relative">
+		<div className="w-[90px] h-[90px] md:w-[150px] md:h-[150px] overflow-hidden rounded-[1000px] border-[3px] border-solid border-[rgba(59,59,59,0.6)] aspect-[1/1] flex-none relative">
 			<Image
 				className={cn(
-					"transition duration-300 absolute top-0 inset-0 rounded-inherit object-cover z-50",
+					"transition duration-300 absolute inset-0 h-full w-full object-cover object-center z-50",
 					isLoading ? "blur-sm" : "blur-0",
 				)}
 				onLoad={() => {
 					return setLoading(false);
 				}}
 				src={src}
-				width={150}
-				height={150}
+				fill
+				sizes="(max-width: 768px) 90px, 150px"
 				loading="lazy"
 				decoding="async"
 				blurDataURL={typeof src === "string" ? src : undefined}
